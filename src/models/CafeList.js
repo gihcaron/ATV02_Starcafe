@@ -9,6 +9,7 @@ class CafeList {
     adiconarCafe(nome, cliente, valor, descricao) { 
         const novoCafe = new Cafe (this.proximoId++, nome, cliente, valor, descricao);
         this.cafes.push(novoCafe);
+        return novoCafe;
     }
 
     listarCafes(){
@@ -30,4 +31,4 @@ class CafeList {
     }
 }
 
-module.exports = CafeList;
+module.exports = new CafeList();

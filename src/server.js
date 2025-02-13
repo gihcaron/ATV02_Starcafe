@@ -12,6 +12,10 @@ app.use(express.json());
 
 //app.use("/api", cafeRoutes);
 
+app.get("/", (req, res) => {
+    res.send("Eu amo muito backend! E o prof é o melhor!");
+});
+
 app.listen(PORT, () => {
 console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
