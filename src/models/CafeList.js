@@ -6,7 +6,7 @@ class CafeList {
         this.proximoId = 1;
     }
 
-    adiconarCafe(nome, cliente, valor, descricao) { 
+    adicionarCafe(nome, cliente, valor, descricao) { 
         const novoCafe = new Cafe (this.proximoId++, nome, cliente, valor, descricao);
         this.cafes.push(novoCafe);
         return novoCafe;
@@ -31,4 +31,4 @@ class CafeList {
     }
 }
 
-module.exports = new CafeList();
+module.exports = CafeList;
