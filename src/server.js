@@ -13,7 +13,7 @@ app.use(express.json());
 app.use("/api", cafeRoutes); 
 
 app.get("/", (req, res) => {
-    res.send("Eu amo muito backend! E o prof é o melhor!");
+    res.send("Eu amo muito backend! ❤️");
 });
 
 app.listen(PORT, () => {

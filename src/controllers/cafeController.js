@@ -35,17 +35,14 @@ const buscarCafePorId = (req, res) => {
     res.json(cafe);
     }
 };
-
 const removerCafe = (req, res) => {
-
     const cafeRemovido = lista.removerCafe(parseInt(req.params.id));
-    if (cafeRemovido.status !== "Pedido" || cafeRemovido.status !== "Pendente") {
-        return res.status(400).json({erro: "Só é possível remover cafés se ele estiver apenas pedido ou pendente!"});
-    }
-    if (!cafeRemovido){
+    if (!cafeRemovido) {
         return res.status(404).json({erro: "Café não encontrado! 🤷‍♂️"});
     }
-
+    if (cafeRemovido.status !== "Pedido" && cafeRemovido.status !== "Pendente") {
+        return res.status(400).json({erro: "Só é possível remover cafés se ele estiver apenas pedido ou pendente!"});
+    }
     res.json({mensagem: "Café removido com grande sucesso!! ✨☕", cafeRemovido});
 };
 
